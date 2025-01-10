@@ -1,66 +1,73 @@
-<h1 align="center">
-  <br>
-  📩 A Template to host an MTA-STS Policy file on GitHub
-  <br>
-</h1>
+# <span style="color: #ff201e">Quick.</span> The fastest and easiest way to&nbsp;create a&nbsp;GitHub Pages website for your project.
+#### The Quick theme magically transforms your `README.md` into a GitHub Pages site, applying clean and visually appealing styles.
 
-<h4 align="center">Use this template to host your <i>MTA Strict Transport Security (MTA-STS)</i> <a href="https://datatracker.ietf.org/doc/html/rfc8461">[RFC 8461]</a> policy file on GitHub Pages.</h4>
+<p class="ignore">Just see it yourself&thinsp;—&thinsp;<a href="https://devich.github.io/quick/">this page</a> is the same <code>README.md</code> file you’re reading, but with the Quick theme applied:</p>
 
-<p align="center">
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#license">License</a> •
-  <a href="#author">Author</a>
+<a class="ignore" href="https://devich.github.io/quick/"><img src="assets/img/preview.png" alt="Quick preview"></a>
+
+## Quick start
+
+1. Make sure a `README.md` file exists in the root directory of your repo, and GitHub Pages is enabled in your repository settings.
+
+2. Create a file named `_config.yml` in the root directory of your repository. The file should contain the following content:
+```yaml
+remote_theme: devich/quick@0.0.1
+```
+
+3. That’s it! There is no step 3. You now have a GitHub Pages website that’s based on your `README.md` file. The changes will take effect some time after you commit and push your updates to the repository. Enjoy your new website!
+
+
+## Looking for a simple landing page for your project? 
+
+No problem! You’re not restricted to using `readme.md` as the index page of your site. Simply create a file named `index.md`, and this theme will use it as the home page. Feel free to create as many pages as you want and link them within your site.
+
+For instance, if you need a home page and an ‘About’ page, create files named `index.md` and `about.md`. Inside the `index.md` file, you can link to your ‘About’ page like this:
+
+```md
+[About this project](about)
+```
+
+
+## Fine tuning
+### Additional settings in _config.yml
+
+You can set additional parameters for the site in the `_config.yml` file.
+
+The following options are available:
+
+- `lang:` sets the language of the site. E.g. `en-US`, `uk`, `pl`, `fr-CA` and so on. The default value is `en-US`.
+- `bg_color:` sets the background color of your website. Can be `dark`, `light` or `auto`. The default value is `auto`.
+- `theme_color:` sets the main accent color for buttons, links, etc. It can be <nobr><code class="highlighter-rouge" style="color:#c52f21">red</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#d92662">pink</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#c0208a">fuchsia</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#9136a3">purple</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#7540be">violet</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#524ed1">indigo</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#2060de">blue</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#0172ac">azure</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#047878">cyan</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#007a50">jade</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#398712">green</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#a5d601">lime</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#f2df0d">yellow</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ffbf00">amber</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ff9500">pumpkin</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#d24317">orange</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ccc6b4">sand</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ababab">grey</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#646b79">zinc</code> or <nobr><code class="highlighter-rouge" style="color:#525f7a">slate</code>.</nobr> The default value is <nobr><code class="highlighter-rouge" style="color:#0172ac">azure</code>.
+- `title:` sets the title of the site. If not set, your repository name will be used.
+- `description`: sets the meta description tag, which typically contains a concise, relevant summary of the page’s content.
+- `keywords`: sets keywords for the page, separated with commas.
+- `gtag`: sets your Google Analytics tag if needed (e.g. G-A1BCDEFGHI).
+
+Alternatively, you can copy the contents of the `_config.yml` file from the [theme repository](https://github.com/devich/quick/blob/main/_config.yml) into your own `_config.yml` file. This will give you access to all available options at once.
+
+
+
+### Ignoring
+
+If there’s a block in the `README.md` file that you don’t want to display on the GitHub Pages site, you can format this block as HTML and assign the `class="ignore"` attribute to it.
+
+<p class="ignore">
+    This paragraph <a href="https://devich.github.io/quick/">will not be displayed</a>
+    on the site because it has an <code>"ignore"</code> class.
 </p>
 
-MTA-STS is a security standard to secure e-mail delivery. E-mail servers that send inbound e-mail to your domain will be able to detect that your e-mail server supports SMTP-over-TLS via `STARTTLS` (also known as [Opportunistic TLS](https://en.wikipedia.org/wiki/Opportunistic_TLS)) before opening the actual connection.
+```html
+<p class="ignore">
+    This paragraph <a href="https://devich.github.io/quick/">will not be
+    displayed</a> on the site because it has an <code>"ignore"</code> class.
+</p>
+```
 
-In case the sending e-mail server is not able to initiate a secure connection, it will end the connection to enforce transport layer encryption. This mitigates [Man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) DNS and SMTP [downgrade attacks](https://en.wikipedia.org/wiki/Downgrade_attack) that would allow an attacker to read or manipulate e-mail in transit.
 
-## How To Use
+### More customization
 
-1. Make sure you are [signed in to GitHub](https://github.com/login). Then click on [**Use this template**](https://github.com/jpawlowski/mta-sts.template/generate) to create a copy to your own GitHub profile (see [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)). Don't _clone_ the repository.
-   You may name your repository whatever you like. For simplicity, you can name it `mta-sts.<your_domain.tld>`.
+If you need to use your own CSS styles, create a file `assets/css/custom.css` in your repository and add your styles to it.
 
-2. Change the file `.well-known/mta-sts.txt` according to your needs.
+For a custom favicon, just place your file in `PNG` format at `assets/img/favicon.png`.
 
-3. Create a `CNAME` record for `mta-sts.<your_domain.tld>` in your domain's DNS that points to `<your_username>.github.io` or `<your_organization>.github.io` and [enable GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/).
-
-4. Open a browser to `https://mta-sts.<your_domain.tld>` and make sure it does not show any certificate warnings.
-
-5. Create a `TXT` record for `_mta-sts.<your_domain.tld>` in your domain's DNS to enable the MTA-STS policy for your domain.
-
-   You may copy & paste this to your DNS provider:
-
-   ```dns
-   #HOST       #TTL    #TYPE    #VALUE
-   _mta-sts    3600    TXT      "v=STSv1; id=20220317000000Z"
-   ```
-
-   **Note that you will need to change the `id=` here whenever you make changes to your `mta-sts.txt` policy file.**
-
-6. Validate your setup, for example by using the [MTA-STS Lookup by MXToolBox](https://mxtoolbox.com/mta-sts.aspx), or looking into your [Hardenize Public Report](https://www.hardenize.com/).
-
-_Optional (but **highly recommended**):_
-
-7. Create another `TXT` record for `_smtp._tls.<your_domain.tld>` in your domain's DNS to enable reporting (see [RFC 8460](https://datatracker.ietf.org/doc/html/rfc8460)).
-   You may copy & paste this to your DNS provider:
-
-   ```dns
-   #HOST         #TTL    #TYPE    #VALUE
-   _smtp._tls    3600    TXT      "v=TLSRPTv1; rua=mailto:tls-rua@mailcheck.<your_domain.tld>"
-   ```
-
-   Note that the e-mail recipient mailbox shall be on a different domain _without_ MTA-STS being configured. This could be a subdomain like `mailcheck.<your_domain.tld>`.
-   It is also quite painful to manually deal with the reports other e-mail providers will send to you. For that particular reason, you may want to consider sending these e-mails to a 3rd-party tool like [Report URI](https://report-uri.com/), [URIports](https://www.uriports.com/), or from other commercial providers.
-
-   You probably want this to be the same tool you might use for DMARC reports, like [DMARC Analyzer](https://www.dmarcanalyzer.com/) or [Dmarcian](https://dmarcian.com/).
-
-## License
-
-[MIT License](https://github.com/jpawlowski/mta-sts.template/blob/gh-pages/LICENSE)
-
-## Author
-
-[julian.pawlowski.me](https://julian.pawlowski.me/) &nbsp;&middot;&nbsp;
-GitHub [@jpawlowski](https://github.com/jpawlowski/mta-sts.template) &nbsp;&middot;&nbsp;
-Mastodon [@Loredo@chaos.social](https://chaos.social/@Loredo)
+For full control, clone this repository and modify the template as you need.
